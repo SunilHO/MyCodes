@@ -2,6 +2,6 @@ trigger AccountTrigger on Account(after insert,after update){
     // To avoid the recursion 
     if(!AccountTriggerHandler.isRecursive){
         AccountTriggerHandler.isRecursive=True;
-        AccountTriggerHandler.newChildAccountAcreation(Trigger.new);
+        AccountTriggerHandler.newChildAccountCreation(Trigger.new);
    }
 }
