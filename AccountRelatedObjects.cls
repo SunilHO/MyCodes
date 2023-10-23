@@ -4,9 +4,9 @@ public with sharing class AccountRelatedObjects {
     //Method to Fetch Related Object Details
     public static myAccocutWrapper getRelatedObjects(Id RecordId) {
         myAccocutWrapper accWrap = new myAccocutWrapper();
-        accWrap.ChildAccountList = [SELECT Name,Status,AnnualRevenue,Createddate From Account 
+        accWrap.childAccountList = [SELECT Name,Status,AnnualRevenue,Createddate From Account 
                                     WHERE ParentId =: RecordId];
-        accWrap.ContactList = [SELECT Name,DoNotCall,Email,Createddate From Contact 
+        accWrap.contactList = [SELECT Name,DoNotCall,Email,Createddate From Contact 
                                WHERE AccountId =: RecordId];
         
         return myAccocutWrapper;
@@ -14,7 +14,7 @@ public with sharing class AccountRelatedObjects {
     
     //Account Wrapper Class
     public class myAccocutWrapper {
-        @AuraEnabled public List<Account> ChildAccountList{get;set;}
-        @AuraEnabled public List<Contact> ContactList{get;set;}
+        @AuraEnabled public List<Account> childAccountList{get;set;}
+        @AuraEnabled public List<Contact> contactList{get;set;}
     }
 }
