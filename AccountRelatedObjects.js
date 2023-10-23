@@ -17,22 +17,22 @@ export default class AccountRelatedObjects extends LightningElement {
             var accCol = [];
             var contCol = [];
             
-         var ChildAccountList =  relatedObjects.ChildAccountList;
-         var ContactList =  relatedObjects.ContactList;
+         var childAccountList =  relatedObjects.childAccountList;
+         var contactList =  relatedObjects.contactList;
 
          for(let Rec in ChildAccountList[0]){
             accCol.push( { label: Rec, fieldName: Rec});
         }
        //Assigning the columns & data for Child AccountList
        this.AccountColumns = accCol;
-       this.AccountRecord = ChildAccountList;
+       this.AccountRecord = childAccountList;
 
          for(let Rec in ContactList[0]){
                 contCol.push( { label: Rec, fieldName: Rec });
             }
           //Assigning the columns & data for Contacts.
            this.ContactColumns = contCol;
-           this.ContactRecord = ContactList;
+           this.ContactRecord = contactList;
 
         }
         else if(error){
