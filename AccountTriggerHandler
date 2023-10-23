@@ -3,7 +3,7 @@ public with sharing class AccountTriggerHandler{
     public Static Boolean isRecursive=false;
     
     //Method to create new child Account Based on Parent account Status Changes.
-    public static void newChildAccountAcreation(List<Account>accList){
+    public static void newChildAccountCreation(List<Account>accList){
         try{
             List<Account> childAccountList = new List<Account>();
             for(Account acc:accList){
