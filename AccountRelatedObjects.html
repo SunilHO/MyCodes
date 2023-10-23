@@ -1,0 +1,17 @@
+<template>
+    <lightning-card icon-name="standard:account" title="Child Accounts">
+        <lightning-datatable
+                key-field="id"
+                data={AccountRecord}
+                columns={AccountColumns}>
+        </lightning-datatable>
+    </lightning-card>
+
+    <lightning-card icon-name="standard:contact" title="Contacts">
+         <lightning-datatable
+            key-field="id"
+            data={ContactRecord}
+            columns={ContactColumns}>
+         </lightning-datatable>
+  </lightning-card>
+</template>
